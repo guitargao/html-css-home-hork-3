@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* 在 CSS 盒子模型的默认定义里，你对一个元素所设置的 width 与 height 只会应用到这个元素的内容区。
+  如果这个元素有任何的 border 或 padding ，绘制到屏幕上时的盒子宽度和高度会加上设置的边框和内边距值。
+  这意味着当你调整一个元素的宽度和高度时需要时刻注意到这个元素的边框和内边距。当我们实现响应式布局时，
+  这个特点尤其烦人。border-box 告诉浏览器：你想要设置的边框和内边距的值是包含在width内的。也就是说，
+  如果你将一个元素的width设为100px，那么这100px会包含它的border和padding，内容区的实际宽度是width减去
+  (border + padding)的值。大多数情况下，这使得我们更容易地设定一个元素的宽高。 */
+
+body{
+    background-color: rgb(255, 255, 255);
+    font-family: 'Lora', serif;
+}
+
+#page-wrapper {
+    position: relative;
+  }
+/* 整个网页都处于相对位置中 */
+li{
+    list-style: none;
+}
+/* 去掉li元素的顺序符号 */
+a {
+    color: #000;
+    text-decoration: none;
+  }
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  /* 去除插入图片的各种属性，在这之上应该是全局类的样式 */
+
+.btn{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    text-align: center;
+    /* 行内元素对齐 */
+    padding: 5px 20px 5px 20px;
+    border-radius: 50px;
+    cursor: progress;
+    /* 设置光标停留的样式 */
+/* 在设置html的时候可以把所有的相同元素（按钮）都设置在一起，像这个就使用了BTN，这样可以统一修改所有的元素 */   
+}
+
+
+.grid{
+    display: flex;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    min-height: 75px;
+    display: flex; 
+    width: 100%;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: rgb(204, 201, 201);
+}
+@media (max-width: 600px) {
+    header{
+      flex-wrap: wrap;
+    }
+  
+}
+
+.logo{
+    width: 60vw;
+}
+
+@media (max-width: 650px) {
+    .logo{
+      margin-top: 15px;
+      width: 100%;
+      position: relative;
+    }
+  
+}
+/* vw、vh、vmax、vmin这四个单位都是基于视口vw是相对视口（viewport）的宽度而定的，
+长度等于视口宽度的1/100，假如浏览器的宽度为200px，那么1vw就等于2px（200px/100） */
+
+img {
+    width: 100%;
+    height: 100%;
+    max-width: 150px;
+    display: flex;
+    justify-content: center;
+    /* 行元素对齐 */
+    align-items: center;
+    /* 竖元素对齐 */
+    text-align: center;
+    /* 行内元素对齐 */
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  @media (max-width: 650px) {
+    .logo > img {
+      margin: 0 auto;
+      /* 设置对象上下间距为0，左右自动。 */
+    }
+  }
+
+nav {
+    font-weight: 400;
+    
+}  
+
+@media (max-width: 650px) {
+  nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 50px;
+  }
+  nav li {
+    padding-bottom: 5px;
+  }
+}
+
+
+nav li{
+    padding-bottom:  5px;
+}
+
+nav > ul {
+    width: 35vw;
+    display: flex;
+    flex-direction: row;
+    /* 给元素添加 display: flex 属性可以让它变成 flex 容器， 然后可以让元素的项目排列成行或列。 
+    只要给父元素添加 flex-direction 属性，并把属性值设置为 row 或 column，即可横向排列或纵向
+    排列它的所有子元素。 创建一行将使子项水平对齐，创建一列将使子项垂直对齐。 */
+    justify-content: space-around;
+    /* 项目居中排列，两边不会靠边，还有另外的四个命令 */
+  }
+
+  @media (max-width: 650px) {
+    nav > ul {
+      flex-direction: column;
+    }
+  }
+  
+#title{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   height: 160px;
+   margin-top: 80px;
+   
+}
+h2 {
+    margin-bottom: 20px;
+    word-wrap: break-word;
+  }
+  
+input[type='email'] {
+    max-width: 275px;
+    width: 100%;
+    /* 上一个命令align-items: center;不能把button变成竖排练，
+    把宽度变成100%也很重要 */
+    padding: 5px;
+  }
+  
+input[type='submit'] {
+    max-width: 150px;
+    width: 100%;
+    height: 30px;
+    margin: 15px 0;
+    border: 0;
+    background-color: #1126a1;
+    color: cornsilk;
+    font-size: large;
+  }
+  /* 除了id 和 class 来显示想要的样式。 还可以通过属性选择器来选择样式。
+     格式类似于[attr=value]  */
+
+     @media (max-width: 650px) {
+      #title {
+        margin-top: 160px;
+      }
+    }
+  
+#features{
+    margin-top: 20px;
+}
+  
+#features .icon{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 20vw;
+     height: 120px;
+}
+
+@media (max-width: 550px) {
+  #features .icon {
+    display: none;
+  }
+}
+#features .desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 160px;
+    width: 80vw;
+}
+
+@media (max-width: 550px) {
+  #features .desc {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    height: 150px;
+  }
+}
+#YTB{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    /* content是横向的，self是纵向的 */
+}
+
+#pricing{
+  margin-top: 50px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   /* lex 子元素在 flex 容器中居中排列。 */
+}
+.product{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 是一种沿交叉轴对齐的方式。CSS 中的 align-items 属性用来定义 flex 子元素沿交叉轴的对齐方式。 
+  对行来说，定义的是元素的上下对齐方式； 对列来说，是定义元素的左右对齐方式。 */
+  text-align: center;
+  width: calc(100% / 3);
+  /* 这是一个很有用的函数，有加减乘除可以使用，这个例子中吧我所需要的网页平均的分成三个等份。 */
+  margin: 10px;
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+.furniture{
+  background-color:  #1126a1;
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  text-transform: uppercase;
+  /* 改变大小写 */
+  font-weight: 500;
+  /* 设置标题的粗细 */
+}
+h2{
+  margin-top: 15px;
+}
+.product > ol{
+  margin: 15px 0;
+}
+.product > ol > li{
+  margin: 5px 0;
+  font-size: large;
+}
+
+button{
+  border: 0;
+  margin: 15px 0;
+  background-color:  #1126a1;
+  color: white;
+  font-size: large;
+}
+
+@media (max-width: 800px) {
+  #pricing {
+    flex-direction: column;
+  }
+  .product {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+
+footer{
+  margin-top: 30px;
+  background-color:  rgb(204, 201, 201);
+  padding: 20px;
+}
+footer > ul{
+  display: flex;
+  justify-content: flex-end;
+  /* lex 子元素在 flex 容器中靠右排列 */
+  font-size: large;
+}
+
+footer > ul > li {
+  padding: 0 10px;
+}
+
+footer > span{
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: large;
+}

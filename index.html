@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+</head>
+<body>
+   <div id="page-wrapper" >
+    <header id="header">
+        <div class="logo">
+           <img id="header-img" 
+                src="images/ikea logo.jpg"
+                alt="ikea logo" >
+        </div>
+        <nav id="nav-bar">
+            <ul class="nav-list">
+                <li><a class="nav-link" href="#features">Features</a></li>
+                <li><a class="nav-link" href="#YTB">YTB</a> </li>
+                                             <!-- 链接名字连大小写都很重要 -->
+                <li><a class="nav-link" href="#pricing">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="title">
+    <h2>What's new in the IKEA range</h2>
+    <form id="form" action="https://www.freecodecamp.com/email-submit">
+       <input id="email" 
+           type="email" 
+           name="email"
+           placeholder="enter your email address"
+           required/>
+       
+       <input id="submit" 
+           value="Get started" 
+           type="submit" 
+           class="btn"/>          
+
+    </form>
+    </section>
+    
+    <div class="container">
+    <section id="features">
+        <div class="grid">
+            <div class="icon"><svg viewBox="0 0 448 512" width="50" title="beer">
+                <path d="M368 96h-48V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56v400c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24v-42.11l80.606-35.977C429.396 365.063 448 336.388 448 304.86V176c0-44.112-35.888-80-80-80zm16 208.86a16.018 16.018 0 0 1-9.479 14.611L320 343.805V160h48c8.822 0 16 7.178 16 16v128.86zM208 384c-8.836 0-16-7.164-16-16V144c0-8.836 7.164-16 16-16s16 7.164 16 16v224c0 8.836-7.164 16-16 16zm-96 0c-8.836 0-16-7.164-16-16V144c0-8.836 7.164-16 16-16s16 7.164 16 16v224c0 8.836-7.164 16-16 16z" />
+              </svg></div>
+            <div class="desc">
+            <h2>New arrivals to help you make room for summer</h2>
+            <p>
+                Let bright sunny days inspire you to freshen your interiors. 
+        Explore our latest range of products to help make your space feel 
+        lighter and brighter.
+            </p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="icon"><svg viewBox="0 0 640 512" width="50" title="store-alt">
+                <path d="M320 384H128V224H64v256c0 17.7 14.3 32 32 32h256c17.7 0 32-14.3 32-32V224h-64v160zm314.6-241.8l-85.3-128c-6-8.9-16-14.2-26.7-14.2H117.4c-10.7 0-20.7 5.3-26.6 14.2l-85.3 128c-14.2 21.3 1 49.8 26.6 49.8H608c25.5 0 40.7-28.5 26.6-49.8zM512 496c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V224h-64v272z" />
+              </svg></div>
+            <div class="desc">
+            <h2>The outdoors is calling. How will you answer?</h2>
+            <p>
+                Come rain or shine, this summer unplug from everyday life and take a break. 
+        Our new products will inspire you to refresh your mind and reconnect with nature.
+            </p>
+            </div>
+            </section>
+    </div>
+    
+    <section id="YTB">
+    <iframe id="video"
+            width="560" height="315" 
+            src="https://www.youtube.com/embed/llsjl-_gIpQ" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allowfullscreen>
+    </iframe>
+    </section>
+
+    <section id="pricing">
+        <div class="product" id="chair">
+            <div class="furniture"> Chair</div>
+            <h2>$20</h2>
+            <ol>
+                <li>wood</li>
+                <li>black</li>
+                <li>height</li>
+                <li>width</li>
+            </ol>
+            <button class="btn">select</button>
+            </div>
+
+         <div class="product" id="table">
+                <div class="furniture"> table</div>
+                <h2>$40</h2>
+                <ol>
+                    <li>wood</li>
+                    <li>black</li>
+                    <li>height</li>
+                    <li>width</li>
+                </ol>
+                <button class="btn">select</button>
+        </div>  
+
+        <div class="product" id="bed">
+                <div class="furniture"> bed</div>
+                    <h2>$60</h2>
+                    <ol>
+                        <li>wood</li>
+                        <li>black</li>
+                        <li>height</li>
+                        <li>width</li>
+                    </ol>
+                    <button class="btn">select</button>
+                </div>
+
+        
+    </section>
+     
+
+    <footer id="footer">
+        <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <span>2021 IKEA</span>
+    </footer>
+   
+    </div>
+</body>
